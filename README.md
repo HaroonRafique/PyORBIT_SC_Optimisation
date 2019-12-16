@@ -1,2 +1,2 @@
 # PyORBIT_SC_Optimisation
-Optimisation of slice-by-slice space charge
+Testing of optimisation of slice-by-slice space charge
