@@ -68,7 +68,7 @@ parameters['turns_max'] = int(50)
 switches = {
 	'CreateDistn':		True,
 	'Update_Twiss':		False,
-	'Space_Charge': 	True,
+	'Space_Charge': 	False,
 	'Outputs':			False,
 	'GridSizeX': 128,
 	'GridSizeY': 128,
@@ -76,8 +76,8 @@ switches = {
 }
 
 
-if switches['Outputs'] is True:
-	tu = parameters['turns_max']
+if switches['Outputs'] is False:
+	tu = [0, parameters['turns_max']-1]
 else:
 	tu = range(0, parameters['turns_max'])
 
