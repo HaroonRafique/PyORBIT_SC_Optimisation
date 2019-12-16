@@ -9,7 +9,7 @@ parameters['tunex']						= '621'
 parameters['tuney']						= '610'
 
 parameters['lattice_start'] 		= 'BWSV64'
-parameters['n_macroparticles']			= int(5E2)
+parameters['n_macroparticles']			= int(5E5)
 
 # PS Injection 1.4 GeV
 if parameters['Machine'] is 'PreLIU':
@@ -77,7 +77,7 @@ switches = {
 
 
 if switches['Outputs'] is True:
-	tu = parameters['turns_max']
+	tu = parameters['turns_max']-1
 else:
 	tu = range(0, parameters['turns_max'])
 
