@@ -8,7 +8,7 @@ parameters['Machine']					= 'PreLIU' #'LIU'
 parameters['tunex']						= '621'
 parameters['tuney']						= '610'
 
-parameters['lattice_start'] 		= 'BWSV64'
+parameters['lattice_start'] 			= 'BWSV64'
 parameters['n_macroparticles']			= int(5E5)
 
 # PS Injection 1.4 GeV
@@ -65,7 +65,7 @@ parameters['sig_z'] 	= (parameters['beta'] * c * parameters['blength'])/4.
 parameters['turns_max'] = int(50)
 
 switches = {
-	'CreateDistn':		True,
+	'CreateDistn':		False,
 	'Update_Twiss':		False,
 	'Space_Charge': 	False,
 	'Outputs':			False,
@@ -74,6 +74,13 @@ switches = {
 	'GridSizeZ': 64
 }
 
+if switches['CreateDistn'] is False:
+	if parameters['tuney'] is '610':
+		parameters['input_distn']		='../00_Master/Input_Distn_LEQ_21_10.mat'
+	elif parameters['tuney'] is '624':
+		parameters['input_distn']		='../00_Master/Input_Distn_LEQ_21_24.mat'
+	else:
+		print 'simulation_parameters: input distn for chosen bunch not found'
 
 if switches['Outputs'] is False:
 	tu = [0, parameters['turns_max']-1]
